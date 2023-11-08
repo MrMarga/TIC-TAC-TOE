@@ -26,12 +26,12 @@ jobs:
         run: npm install # Add your specific npm install command
 
       - name: Install Trivy
-        run: |
-          Scanning files
-          trivy fs . > trivyfs.txt
+        run: trivy fs . > trivyfs.txt
+          #Scanning files
+          
       
       - name: Docker build and push
-        run: |
+        run: 
            # Run commands to build and push Docker images
            docker build -t tic-tac-toe .
            docker tag tic-tac-toe mrmarga/tic-tac-toe:latest
