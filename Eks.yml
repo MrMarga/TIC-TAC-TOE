@@ -41,9 +41,8 @@ jobs:
            DOCKER_CLI_ACI: 1
 
       - name: Trivy image scan
-        run: |
-          trivy image mrmarga/tic-tac-toe:latest # Add Trivy scan command here
-          docker rmi mrmarga/tic-tac-toe:latest tic-tac-toe:latest
+        run: trivy image mrmarga/tic-tac-toe:latest # Add Trivy scan command here
+          
    
   deploy:
    needs: build-analyze-scan   
