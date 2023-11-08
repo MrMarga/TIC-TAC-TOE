@@ -9,7 +9,7 @@ on:
 jobs:
   build-analyze-scan:
     name: Build
-    runs-on: [githubactions-Eks marga]
+    runs-on: [githubactions-Eks,marga]
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
