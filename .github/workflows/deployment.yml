@@ -25,7 +25,7 @@ jobs:
       - name: NPM Install
         run: npm install # Add your specific npm install command
 
-      - name: Install Trivy
+      - name: Trivy Scan
         run: trivy fs . > trivyfs.txt
           #Scanning files
           
@@ -36,6 +36,7 @@ jobs:
            docker tag tic-tac-toe mrmarga/tic-tac-toe:latest
            docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
            docker push mrmarga/tic-tac-toe:latest
+           docker rmi mrmarga/tic-tac-toe:latest tic-tac-toe
            # Run commands to build and push Docker images
         env:
            DOCKER_CLI_ACI: 1
